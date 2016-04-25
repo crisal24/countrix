@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+        <groupId>es.e-ucm.countries</groupId>
+    	<artifactId>parent</artifactId>
+    	<version>1.0-SNAPSHOT</version>
+    	<relativePath>../</relativePath>
+	</parent>
+
+	<artifactId>countries-core</artifactId>
+	<packaging>jar</packaging>
+	<name>Answer Core</name>
+    <build>
+        <testResources>
+            <testResource>
+                <directory>../assets</directory>
+            </testResource>
+        </testResources>
+    </build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx</artifactId>
+            <version>${gdx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>es.e-ucm.gleaner</groupId>
+			<artifactId>viewer</artifactId>
+			<version>${gleaner.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>es.e-ucm</groupId>
+			<artifactId>i18n</artifactId>
+			<version>${i18n.version}</version>
+		</dependency>
+        <!-- TEST -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+	</dependencies>
+</project>
