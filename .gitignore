@@ -64,8 +64,9 @@ build/
 
 
 assets/flags
-/assets/skin/
-!assets/skin/skin.json
+/assets/config.json
+/assets/skin/*
+!/assets/skin/skin.json
 
 assets-raw/.png/
 .lastmodified

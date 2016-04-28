@@ -3,7 +3,7 @@ package com.anserran.answer.players;
 import java.util.HashMap;
 import java.util.Random;
 
-import com.anserran.answer.model.questions.Question;
+import com.anserran.countries.model.questions.Question;
 
 
 public class MemoryPlayer extends Player {

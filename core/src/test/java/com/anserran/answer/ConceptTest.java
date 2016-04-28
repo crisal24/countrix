@@ -1,11 +1,12 @@
 package com.anserran.answer;
 
-import com.anserran.answer.model.concepts.Concept;
-import com.anserran.answer.model.concepts.Concept.State;
-import com.anserran.answer.model.concepts.QuestionsAlgorithm;
-import com.anserran.answer.model.concepts.QuestionsAlgorithm.InformedComparator;
-import com.anserran.answer.model.concepts.QuestionsAlgorithm.NaiveComparator;
-import com.anserran.answer.model.questions.Question;
+import com.anserran.countries.C;
+import com.anserran.countries.model.concepts.Concept;
+import com.anserran.countries.model.concepts.Concept.State;
+import com.anserran.countries.model.concepts.QuestionsAlgorithm;
+import com.anserran.countries.model.concepts.QuestionsAlgorithm.InformedComparator;
+import com.anserran.countries.model.concepts.QuestionsAlgorithm.NaiveComparator;
+import com.anserran.countries.model.questions.Question;
 import com.anserran.answer.players.MemoryPlayer;
 import com.anserran.answer.players.Player;
 import com.badlogic.gdx.utils.Array;

@@ -1,7 +1,7 @@
 package com.anserran.answer.players;
 
 
-import com.anserran.answer.model.questions.Question;
+import com.anserran.countries.model.questions.Question;
 
 public class PerfectPlayer extends Player {
 

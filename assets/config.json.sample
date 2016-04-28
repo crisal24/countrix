@@ -1,0 +1,5 @@
+{
+    "endpoint": "https://localhost/gleaner/collector/",
+    "trackingCode": "a_tracking_code",
+    "showStatements": false
+}

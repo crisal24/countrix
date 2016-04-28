@@ -14,8 +14,8 @@
 	<name>Countries HTML</name>
 
 	<properties>
-		<gwt.module>com.anserran.Answer</gwt.module>
-		<gwt.name>Answer</gwt.name>
+		<gwt.module>com.anserran.Countries</gwt.module>
+		<gwt.name>Countries</gwt.name>
 	</properties>
 
 	<dependencies>
@@ -32,8 +32,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>es.e-ucm.answer</groupId>
-			<artifactId>answer-core</artifactId>
+            <groupId>es.e-ucm.countries</groupId>
+			<artifactId>countries-core</artifactId>
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
 			<scope>provided</scope>

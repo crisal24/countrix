@@ -1,0 +1,176 @@
+{
+  "com.badlogic.gdx.graphics.g2d.BitmapFont": {
+    "regular": {
+      "file": "Nunito-Regular-24.fnt",
+      "markupEnabled": true
+    },
+    "bold": {
+      "file": "Nunito-Bold-24.fnt",
+      "markupEnabled": true
+    },
+    "bold-big": {
+      "file": "Nunito-Bold-48.fnt",
+      "markupEnabled": true
+    },
+    "roboto-condensed": {
+      "file": "RobotoCondensed-Regular-12.fnt",
+      "markupEnabled": true
+    },
+    "roboto-condensed-bold": {
+      "file": "RobotoCondensed-Bold-12.fnt",
+      "markupEnabled": true
+    }
+  },
+  "com.badlogic.gdx.graphics.Color": {
+    "white": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+    },
+    "gray": {
+      "a": 1,
+      "r": 0.2803921568627451,
+      "b": 0.2803921568627451,
+      "g": 0.2803921568627451
+    },
+    "light-gray": {
+      "a": 1,
+      "r": 0.8,
+      "b": 0.8,
+      "g": 0.8
+    },
+    "dark-gray": {
+      "a": 1,
+      "r": 0.15882352941176473,
+      "b": 0.15882352941176473,
+      "g": 0.15882352941176473
+    },
+    "green": {
+      "a": 1,
+      "r": 0.2980392156862745,
+      "b": 0.3137254901960784,
+      "g": 0.6862745098039216
+    },
+    "red": {
+      "a": 1,
+      "r": 0.9568627450980393,
+      "b": 0.21176470588235294,
+      "g": 0.2627450980392157
+    },
+    "blue": {
+      "a": 1,
+      "r": 0.12941176470588237,
+      "b": 0.9529411764705882,
+      "g": 0.5882352941176471
+    },
+    "blue-200": {
+      "a": 1,
+      "r": 0.5647058823529412,
+      "b": 0.9764705882352941,
+      "g": 0.792156862745098
+    },
+    "blue-50": {
+      "a": 1,
+      "r": 0.8901960784313725,
+      "b": 0.9921568627450981,
+      "g": 0.9490196078431372
+    },
+    "orange": {
+      "a": 1,
+      "r": 1.0,
+      "b": 0.0,
+      "g": 0.596078431372549
+    },
+    "black": {
+      "a": 1,
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable": {
+    "button-up": {
+      "name": "button",
+      "color": "gray"
+    },
+    "button-green": {
+      "name": "button",
+      "color": "green"
+    },
+    "button-red": {
+      "name": "button",
+      "color": "red"
+    },
+    "button-over": {
+      "name": "button",
+      "color": "dark-gray"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+    "default": {
+      "font": "regular",
+      "fontColor": "light-gray"
+    },
+    "title": {
+      "font": "bold-big",
+      "fontColor": "light-gray"
+    },
+    "question": {
+      "font": "bold",
+      "fontColor": "light-gray"
+    },
+    "correct": {
+      "font": "bold",
+      "fontColor": "green"
+    },
+    "incorrect": {
+      "font": "bold",
+      "fontColor": "red"
+    },
+    "trace": {
+      "font": "roboto-condensed-bold",
+      "fontColor": "white",
+      "background": "round5"
+    },
+    "xapi": {
+      "font": "roboto-condensed",
+      "fontColor": "dark-gray",
+      "background": "round5"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": {
+    "default": {
+      "up": "button-up",
+      "over": "button-over",
+      "down": "button-over",
+      "font": "bold",
+      "fontColor": "light-gray"
+    },
+    "correct": {
+      "up": "button-green",
+      "font": "bold",
+      "fontColor": "light-gray"
+    },
+    "incorrect": {
+      "up": "button-red",
+      "font": "bold",
+      "fontColor": "light-gray"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+    "trace": {
+      "up": "open"
+    }
+  },
+  "com.anserran.countries.view.DecreasingBar$DecreasingBarStyle": {
+    "time": {
+      "drawable": "blank",
+      "primaryColor": "blue",
+      "backgroundColor": "blue-50",
+      "secondaryColor": "blue-200",
+      "delay": 0.25,
+      "delayFactor": 2.5
+    }
+  }
+}
