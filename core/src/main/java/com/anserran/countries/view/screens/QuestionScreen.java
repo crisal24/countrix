@@ -119,6 +119,7 @@ public class QuestionScreen extends Table {
 
 	@Override
 	public void act(float delta) {
+		setVisible(true);
 		super.act(delta);
 		timeBar.setValue(controller.getTime() / C.ROUND_TIME);
 		if (nextQuestion) {
