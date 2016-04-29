@@ -163,6 +163,14 @@
       "up": "open"
     }
   },
+  "com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle": {
+    "default": {
+      "checkboxOn": "checkon",
+      "checkboxOff": "checkoff",
+      "font": "regular",
+      "fontColor": "light-gray"
+    }
+  },
   "com.anserran.countries.view.DecreasingBar$DecreasingBarStyle": {
     "time": {
       "drawable": "blank",

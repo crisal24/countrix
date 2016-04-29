@@ -102,7 +102,7 @@ public class Controller {
 			root.clearChildren();
 			root.addActor(screens.get(screenClass));
 			this.currentScreen = screenClass;
-			if (traceViewer != null) {
+			if (traceViewer != null && getPreferences().getBoolean("xapi", false)) {
 				root.addActor(traceViewer);
 			}
 		}

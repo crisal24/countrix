@@ -4,6 +4,7 @@ import com.anserran.countries.C;
 import com.anserran.countries.control.Controller;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -41,6 +42,20 @@ public class SplashScreen extends Table {
 						c.start();
 					}
 				});
+		row();
+		final CheckBox checkBox = new CheckBox("See xAPI statements", skin);
+		checkBox.getImageCell().pad(c.getAssets().dpToPx(8));
+		checkBox.setChecked(c.getPreferences().getBoolean("xapi", false));
+
+		checkBox.addListener(new ClickListener(){
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				boolean checked = checkBox.isChecked();
+				c.getPreferences().putBoolean("xapi", checked);
+			}
+		});
+
+		add(checkBox).pad(c.getAssets().dpToPx(8));
 	}
 
 	@Override
