@@ -16,8 +16,9 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.ObjectMap;
-import es.eucm.gleaner.tracker.Tracker;
-import es.eucm.gleaner.tracker.format.XAPIFormat;
+import es.eucm.gleaner.tracker.XAPITracker;
+import es.eucm.gleaner.tracker.XAPITracker.Alternative;
+import es.eucm.gleaner.tracker.XAPITracker.Completable;
 import es.eucm.gleaner.tracker.storage.NetStorage;
 import es.eucm.gleaner.viewer.TraceViewer;
 
@@ -43,7 +44,7 @@ public class Controller {
 
 	private int score;
 
-	private Tracker tracker;
+	private XAPITracker tracker;
 
 	private TraceViewer traceViewer;
 
@@ -61,18 +62,14 @@ public class Controller {
 
 		if (config.containsKey("endpoint")
 				&& config.containsKey("trackingCode")) {
-			NetStorage netStorage = new NetStorage(Gdx.net, config
-					.get("endpoint").toString(), config.get("trackingCode")
+			NetStorage netStorage = new NetStorage(Gdx.net, config.get(
+					"endpoint").toString(), config.get("trackingCode")
 					.toString());
 			netStorage.setAuthorization("a:");
-			tracker = new Tracker(netStorage, 1);
-
-			XAPIFormat xapiFormat = new XAPIFormat();
-			tracker.setTraceFormat(xapiFormat);
+			tracker = new XAPITracker(netStorage, 1);
 
 			if (config.get("showStatements", false) == Boolean.TRUE) {
-				traceViewer = new TraceViewer(assets.getSkin(), tracker,
-						xapiFormat);
+				traceViewer = new TraceViewer(assets.getSkin(), tracker);
 				traceViewer.setFillParent(true);
 			}
 		}
@@ -86,23 +83,24 @@ public class Controller {
 
 		if (tracker != null) {
 			if (currentScreen == null) {
-				tracker.started("_session");
+				tracker.initialized("_session", Completable.SERIOUS_GAME);
 			}
 
 			if (screenClass == QuestionScreen.class) {
-				tracker.started("Questions");
+				tracker.initialized("Questions", Completable.LEVEL);
 			}
 		}
 
 		if (currentScreen != screenClass) {
 			if (tracker != null && currentScreen == QuestionScreen.class) {
-				tracker.completed("Questions");
+				tracker.completed("Questions", Completable.LEVEL);
 			}
 
 			root.clearChildren();
 			root.addActor(screens.get(screenClass));
 			this.currentScreen = screenClass;
-			if (traceViewer != null && getPreferences().getBoolean("xapi", false)) {
+			if (traceViewer != null
+					&& getPreferences().getBoolean("xapi", false)) {
 				root.addActor(traceViewer);
 			}
 		}
@@ -123,7 +121,7 @@ public class Controller {
 	}
 
 	public void act(float delta) {
-		if (tracker != null){
+		if (tracker != null) {
 			tracker.update(delta);
 		}
 		assets.update(250);
@@ -177,20 +175,17 @@ public class Controller {
 		}
 
 		if (tracker != null) {
-			tracker.selected(id, textQuestion.getAnswers()[option]);
-			if (correct) {
-				tracker.set("score", score);
-				tracker.increase("score", 1);
-			} else {
-				tracker.decrease("time", C.ERROR_TIME);
-			}
+			tracker.setScore(score);
+			tracker.selected(id, Alternative.QUESTION,
+					textQuestion.getAnswers()[option]);
+
 		}
 
 		return correct;
 	}
 
 	public void dispose() {
-		if (tracker != null){
+		if (tracker != null) {
 			tracker.close();
 		}
 		preferences.flush();
